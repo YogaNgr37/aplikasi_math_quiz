@@ -328,21 +328,6 @@ class _WelcomePageState extends State<WelcomePage> {
                                             height: 20,
                                           ),
 
-                                          Row(
-                                            children: [
-                                              Container(
-                                              width: 20, 
-                                              height: 20, 
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFFD7D7D7),
-                                                border: Border.all(color: primaryColor, width: 3),
-                                                borderRadius: BorderRadius.circular(5)
-                                              ),
-                                              
-                                              )
-                                            ],
-                                          ),
-
                                           SizedBox(
                                             height: 20,
                                           ),
@@ -351,7 +336,9 @@ class _WelcomePageState extends State<WelcomePage> {
                                             height: 60,
                                             width: MediaQuery.of(context).size.width - 2 * defaultMargin,
                                             child: ElevatedButton(
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+                                              },
                                               child: Text("Masuk",
                                                   style: textStyle.copyWith(
                                                       fontSize: 20,

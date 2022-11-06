@@ -3,3 +3,5 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 part 'welcomepage.dart';
+part 'homepage.dart';
+part 'materipage.dart';
