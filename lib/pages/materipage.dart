@@ -49,7 +49,9 @@ class MateriPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    ElevatedButton(onPressed: () {}, child: Text("Pelajari"))
+                    ElevatedButton(onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => OperasiHitung()) ));
+                    }, child: Text("Pelajari"))
                   ],
                 ),
               ),
@@ -91,7 +93,9 @@ class MateriPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    ElevatedButton(onPressed: () {}, child: Text("Pelajari"))
+                    ElevatedButton(onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => Aljabar()) ));
+                    }, child: Text("Pelajari"))
                   ],
                 ),
               ),
@@ -133,7 +137,9 @@ class MateriPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    ElevatedButton(onPressed: () {}, child: Text("Pelajari"))
+                    ElevatedButton(onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => BangunDatar()) ));
+                    }, child: Text("Pelajari"))
                   ],
                 ),
               ),
@@ -175,7 +181,9 @@ class MateriPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    ElevatedButton(onPressed: () {}, child: Text("Pelajari"))
+                    ElevatedButton(onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => PolaBilangan()) ));
+                    }, child: Text("Pelajari"))
                   ],
                 ),
               ),

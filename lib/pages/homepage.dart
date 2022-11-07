@@ -1,7 +1,5 @@
 part of 'pages.dart';
 
-
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -11,52 +9,77 @@ class HomePage extends StatelessWidget {
       backgroundColor: primaryColor,
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.fromLTRB(24, 50, 24, 20),
+          padding: EdgeInsets.fromLTRB(24, 24, 24, 20),
           children: [
             Container(
-              child: Text("Math Quiz adalah aplikasi kuis matematika yang dibuat untuk mengasah kemampuan berpikir pengguna dengan waktu yang telah ditentukan.",
-              style: textStyle.copyWith(color: secondaryColor, fontSize: 18, fontWeight: FontWeight.w500,),
-              textAlign: TextAlign.center,),
+              child: Text(
+                "SELAMAT DATANG di MATH QUIZ",
+                style: textStyle.copyWith(
+                    color: secondaryColor,
+                    fontSize: 40,
+                    fontWeight: FontWeight.w500),
+              ),
             ),
-
-            SizedBox(height: 150,),
-
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              child: Image.asset("assets/images/math.jpg"),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              child: Text(
+                "Math Quiz adalah aplikasi kuis matematika yang dibuat untuk mengasah kemampuan berpikir pengguna dengan waktu yang telah ditentukan.\n \nSebelum melakukan kuis anda bisa mempelajari materi terlebih dahulu.",
+                style: textStyle.copyWith(
+                  color: secondaryColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
               height: 60,
               width: MediaQuery.of(context).size.width - 2 * defaultMargin,
               child: ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MateriPage()));
-                }, 
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MateriPage()));
+                },
                 child: Text("Materi",
-                        style: textStyle.copyWith(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: primaryColor)),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: secondaryColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15))),
-                ),
+                    style: textStyle.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: primaryColor)),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: secondaryColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15))),
+              ),
             ),
-
-            SizedBox(height: 20,),
-
+            SizedBox(
+              height: 20,
+            ),
             Container(
               height: 60,
               width: MediaQuery.of(context).size.width - 2 * defaultMargin,
               child: ElevatedButton(
-                onPressed: (){}, 
+                onPressed: () {},
                 child: Text("Kuis",
-                        style: textStyle.copyWith(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: primaryColor)),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: secondaryColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15))),
-                ),
+                    style: textStyle.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: primaryColor)),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: secondaryColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15))),
+              ),
             ),
           ],
         ),
