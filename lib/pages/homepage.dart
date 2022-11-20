@@ -1,7 +1,28 @@
 part of 'pages.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+    .collection("users")
+    .doc(user!.uid)
+    .get()
+    .then((value) {
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -9,11 +30,11 @@ class HomePage extends StatelessWidget {
       backgroundColor: primaryColor,
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.fromLTRB(24, 24, 24, 20),
+          padding: EdgeInsets.fromLTRB(24, 50, 24, 20),
           children: [
             Container(
               child: Text(
-                "SELAMAT DATANG di MATH QUIZ",
+                "SELAMAT DATANG, ${loggedInUser.firstName} ${loggedInUser.secondName}",
                 style: textStyle.copyWith(
                     color: secondaryColor,
                     fontSize: 28,
@@ -21,10 +42,10 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,),
+              height: 200,),
             Container(
               child: Text(
-                "Sudahkah anda bermain kuis hari ini?\n \n \n \nSebelum melakukan kuis anda bisa mempelajari materi terlebih dahulu.",
+                "Mari bermain kuis!",
                 style: textStyle.copyWith(
                   color: secondaryColor,
                   fontSize: 18,

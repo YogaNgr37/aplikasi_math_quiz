@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: primaryColor,
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
@@ -92,17 +92,17 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Text(
             "Masuk",
             textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+            style: textStyle.copyWith(
+                fontSize: 20, color: secondaryColor, fontWeight: FontWeight.bold),
           )),
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: secondaryColor,
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: secondaryColor,
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
@@ -111,12 +111,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    /* SizedBox(
+                      SizedBox(
                         height: 200,
                         child: Image.asset(
-                          "assets/welcome_image.png",
+                          "assets/images/welcome_image.png",
                           fit: BoxFit.contain,
-                        )), */
+                        )), 
                     SizedBox(height: 45),
                     emailField,
                     SizedBox(height: 25),
@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text("Belum mempunyai akun? "),
+                          Text( style: textStyle.copyWith(),"Belum mempunyai akun? "),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
@@ -138,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                             child: Text(
                               "Registrasi",
-                              style: TextStyle(
+                              style: textStyle.copyWith(
                                   color: Colors.redAccent,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15),

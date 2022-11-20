@@ -162,7 +162,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: primaryColor,
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
@@ -172,18 +172,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           child: Text(
             "Registrasi",
             textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+            style: textStyle.copyWith(
+                fontSize: 20, color: secondaryColor, fontWeight: FontWeight.bold),
           )),
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.red),
+          icon: Icon(Icons.arrow_back, color: secondaryColor),
           onPressed: () {
             // passing this to our root
             Navigator.of(context).pop();
@@ -193,7 +193,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: secondaryColor,
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
@@ -202,12 +202,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    /*SizedBox(
+                    SizedBox(
                         height: 180,
                         child: Image.asset(
-                          "assets/logo.png",
+                          "assets/images/welcome_image.png",
                           fit: BoxFit.contain,
-                        )),*/
+                        )),
                     SizedBox(height: 45),
                     firstNameField,
                     SizedBox(height: 20),
@@ -221,6 +221,23 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     SizedBox(height: 20),
                     signUpButton,
                     SizedBox(height: 15),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text( style: textStyle.copyWith(),"Sudah mempunyai akun? "),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text(
+                              "Masuk",
+                              style: textStyle.copyWith(
+                                  color: Colors.redAccent,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
+                            ),
+                          )
+                        ])
                   ],
                 ),
               ),
@@ -287,7 +304,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         .collection("users")
         .doc(user.uid)
         .set(userModel.toMap());
-    Fluttertoast.showToast(msg: "Akun telah berhasil dibuat");
+    Fluttertoast.showToast(msg: "Akun berhasil dibuat");
 
     Navigator.pushAndRemoveUntil(
         (context),
