@@ -5,7 +5,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:aplikasi_kuis_matematika/materi page/materi.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../models/user_model.dart';
+
 
 part 'welcomepage.dart';
 part 'homepage.dart';
 part 'materipage.dart';
+part 'login.dart';
+part 'register.dart';

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "334203762013",
+    "project_id": "login-auth-55f5e",
+    "storage_bucket": "login-auth-55f5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334203762013:android:dae01fad57720623fa24b4",
+        "android_client_info": {
+          "package_name": "com.example.aplikasi_kuis_matematika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334203762013-gn3ba1qkkr0g386icqkfhl0tou84j6ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWQ4W8lEfxQFR_DRr6-skRouiDU6Y1MMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334203762013-gn3ba1qkkr0g386icqkfhl0tou84j6ml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

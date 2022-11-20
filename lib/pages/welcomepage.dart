@@ -11,6 +11,15 @@ class _WelcomePageState extends State<WelcomePage> {
   
   bool _hide = true;
 
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController passwordController = new TextEditingController();
+
+  final _auth = FirebaseAuth.instance;
+
+  String? errorMessage;
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 200,
+                height: 100,
               ),
               Container(
                 height: 60,
@@ -117,18 +126,6 @@ class _WelcomePageState extends State<WelcomePage> {
                                                             10)),
                                                 hintText: "Masukkan nama anda",
                                                 labelText: "Nama",),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          TextField(
-                                            decoration: InputDecoration(
-                                                border: OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10)),
-                                                hintText: "Masukkan umur anda",
-                                                labelText: "Umur",),
                                           ),
                                           SizedBox(
                                             height: 20,

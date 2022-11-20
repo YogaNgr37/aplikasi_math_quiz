@@ -16,22 +16,15 @@ class HomePage extends StatelessWidget {
                 "SELAMAT DATANG di MATH QUIZ",
                 style: textStyle.copyWith(
                     color: secondaryColor,
-                    fontSize: 40,
+                    fontSize: 28,
                     fontWeight: FontWeight.w500),
               ),
             ),
             SizedBox(
-              height: 30,
-            ),
-            Container(
-              child: Image.asset("assets/images/math.jpg"),
-            ),
-            SizedBox(
-              height: 30,
-            ),
+              height: 10,),
             Container(
               child: Text(
-                "Math Quiz adalah aplikasi kuis matematika yang dibuat untuk mengasah kemampuan berpikir pengguna dengan waktu yang telah ditentukan.\n \nSebelum melakukan kuis anda bisa mempelajari materi terlebih dahulu.",
+                "Sudahkah anda bermain kuis hari ini?\n \n \n \nSebelum melakukan kuis anda bisa mempelajari materi terlebih dahulu.",
                 style: textStyle.copyWith(
                   color: secondaryColor,
                   fontSize: 18,
