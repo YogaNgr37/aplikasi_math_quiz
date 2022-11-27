@@ -193,21 +193,22 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: secondaryColor,
+            color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(36.0),
+              padding: const EdgeInsets.all(30.0),
               child: Form(
                 key: _formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
+                    Text(style: textStyle.copyWith(fontSize: 34, color: primaryColor, fontWeight: FontWeight.bold),"Register"),
+                    /*SizedBox(
                         height: 180,
                         child: Image.asset(
                           "assets/images/welcome_image.png",
                           fit: BoxFit.contain,
-                        )),
+                        )),*/
                     SizedBox(height: 45),
                     firstNameField,
                     SizedBox(height: 20),

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "334203762013-vneqk2odqh15uhuihlt178r0ac5dv12p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplikasi_kuis_matematika",
+            "certificate_hash": "e472dad85d0b5c3159d1855fb044109aa148ff0f"
+          }
+        },
+        {
           "client_id": "334203762013-gn3ba1qkkr0g386icqkfhl0tou84j6ml.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "334203762013-gn3ba1qkkr0g386icqkfhl0tou84j6ml.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "334203762013-494qp3skhfk7i48l6u1qn9nn05mm3o69.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.aplikasiKuisMatematika"
+              }
             }
           ]
         }

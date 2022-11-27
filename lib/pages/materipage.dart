@@ -6,7 +6,7 @@ class MateriPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: secondaryColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           'Materi',
@@ -18,7 +18,7 @@ class MateriPage extends StatelessWidget {
         children: [
           Expanded(
             child: Card(
-              elevation: 50,
+              elevation: 20,
               shadowColor: primaryColor,
               color: Color(0xFF4FA095),
               child: SizedBox(
@@ -62,7 +62,7 @@ class MateriPage extends StatelessWidget {
 
           Expanded(
             child: Card(
-              elevation: 50,
+              elevation: 20,
               shadowColor: primaryColor,
               color: Color(0xFF4FA095),
               child: SizedBox(
@@ -106,7 +106,7 @@ class MateriPage extends StatelessWidget {
 
           Expanded(
             child: Card(
-              elevation: 50,
+              elevation: 20,
               shadowColor: primaryColor,
               color: Color(0xFF4FA095),
               child: SizedBox(
@@ -150,7 +150,7 @@ class MateriPage extends StatelessWidget {
 
           Expanded(
             child: Card(
-              elevation: 50,
+              elevation: 20,
               shadowColor: primaryColor,
               color: Color(0xFF4FA095),
               child: SizedBox(

@@ -6,10 +6,10 @@ class OperasiHitung extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: secondaryColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Operasi Hitung",
-        style: textStyle.copyWith(color: secondaryColor, fontSize: 24),),),
+        style: textStyle.copyWith(color: Colors.white, fontSize: 24),),),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.fromLTRB(5, 20, 5, 20),

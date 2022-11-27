@@ -9,6 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+
 import '../models/user_model.dart';
 
 
@@ -17,3 +18,4 @@ part 'homepage.dart';
 part 'materipage.dart';
 part 'login.dart';
 part 'register.dart';
+part 'sidenavbar.dart';

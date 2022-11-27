@@ -6,10 +6,10 @@ class PolaBilangan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: secondaryColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Pola Bilangan",
-        style: textStyle.copyWith(color: secondaryColor, fontSize: 24),),),
+        style: textStyle.copyWith(color: Colors.white, fontSize: 24),),),
       body: SafeArea(child: Text("pola bilangan")),
     );
   }

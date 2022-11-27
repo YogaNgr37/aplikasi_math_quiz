@@ -27,18 +27,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
+      appBar: AppBar(title: Text(style: textStyle.copyWith(fontSize: 26),"MATH QUIZ"),),
+      drawer: SideNav(),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.fromLTRB(24, 50, 24, 20),
+          padding: EdgeInsets.fromLTRB(24, 10, 24, 20),
           children: [
             Container(
               child: Text(
                 "SELAMAT DATANG, ${loggedInUser.firstName} ${loggedInUser.secondName}",
                 style: textStyle.copyWith(
-                    color: secondaryColor,
+                    color: primaryColor,
                     fontSize: 28,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(
@@ -47,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "Mari bermain kuis!",
                 style: textStyle.copyWith(
-                  color: secondaryColor,
+                  color: primaryColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
@@ -69,9 +71,9 @@ class _HomePageState extends State<HomePage> {
                     style: textStyle.copyWith(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
-                        color: primaryColor)),
+                        color: Colors.white)),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: secondaryColor,
+                    backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15))),
               ),
@@ -88,9 +90,9 @@ class _HomePageState extends State<HomePage> {
                     style: textStyle.copyWith(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
-                        color: primaryColor)),
+                        color: Colors.white)),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: secondaryColor,
+                    backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15))),
               ),
