@@ -36,10 +36,10 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               child: Text(
-                "SELAMAT DATANG, ${loggedInUser.firstName} ${loggedInUser.secondName}",
+                "SELAMAT DATANG,\n${loggedInUser.firstName} ${loggedInUser.secondName}",
                 style: textStyle.copyWith(
                     color: primaryColor,
-                    fontSize: 28,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
             ),

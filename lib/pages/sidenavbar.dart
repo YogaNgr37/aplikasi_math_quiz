@@ -15,14 +15,15 @@ class _SideNavState extends State<SideNav> {
   void initState() {
     super.initState();
     FirebaseFirestore.instance
-    .collection("users")
-    .doc(user!.uid)
-    .get()
-    .then((value) {
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
       this.loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -35,16 +36,30 @@ class _SideNavState extends State<SideNav> {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Row(
                 children: [
-                  CircleAvatar(radius: 30, backgroundColor: Colors.white,),
-                  SizedBox(width: 20,),
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
                   Column(
                     children: [
-                      Text(style: textStyle.copyWith(color: Colors.white),"${loggedInUser.firstName} ${loggedInUser.secondName}"),
-                      SizedBox(height: 10,),
+                      Text(
+                          style: textStyle.copyWith(color: Colors.white),
+                          "${loggedInUser.firstName} ${loggedInUser.secondName}"),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Row(
                         children: [
-                          Icon(Icons.monetization_on, color: Colors.white,),
-                          Text(style: textStyle.copyWith(color: Colors.white),"5000")
+                          Icon(
+                            Icons.monetization_on,
+                            color: Colors.white,
+                          ),
+                          Text(
+                              style: textStyle.copyWith(color: Colors.white),
+                              "5000")
                         ],
                       ),
                     ],
@@ -54,14 +69,34 @@ class _SideNavState extends State<SideNav> {
             ),
             Container(
               padding: EdgeInsets.only(left: 25),
-              child: Text(style: textStyle.copyWith(color: Colors.white, fontSize: 16),"Leaderboard - Peringkat 10"),
+              child: Text(
+                  style: textStyle.copyWith(color: Colors.white, fontSize: 16),
+                  "Leaderboard - Peringkat 10"),
             ),
-            SizedBox(height: 48,),
+            SizedBox(
+              height: 48,
+            ),
             listItem(label: "Daily Quiz", icon: Icons.quiz),
             listItem(label: "Leaderboard", icon: Icons.leaderboard),
             listItem(label: "How to Use", icon: Icons.question_answer),
-            listItem(label: "About Us", icon: Icons.face)
-            ],
+            listItem(label: "About Us", icon: Icons.face),
+            SizedBox(
+              height: 350,
+            ),
+            Container(
+                margin: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width - 2 * defaultMargin,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.all(10),
+                        backgroundColor: Colors.white),
+                    onPressed: () {
+                      logout(context);
+                    },
+                    child: Text(
+                        style: textStyle.copyWith(color: Colors.black),
+                        "Logout")))
+          ],
         ),
       ),
     );
@@ -74,8 +109,16 @@ class _SideNavState extends State<SideNav> {
     return ListTile(
       leading: Icon(icon, color: color),
       hoverColor: hovercolor,
-      title: Text(label, style: textStyle.copyWith(color: Colors.white,fontSize: 16),),
+      title: Text(
+        label,
+        style: textStyle.copyWith(color: Colors.white, fontSize: 16),
+      ),
       onTap: (() {}),
     );
+  }
+
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));
   }
 }
