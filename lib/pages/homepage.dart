@@ -15,10 +15,10 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     FirebaseFirestore.instance
-    .collection("users")
-    .doc(user!.uid)
-    .get()
-    .then((value) {
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
       this.loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
@@ -27,10 +27,219 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(style: textStyle.copyWith(fontSize: 26),"MATH QUIZ"),),
+      appBar: AppBar(
+        title: Text(style: textStyle.copyWith(fontSize: 26), "MATH QUIZ"),
+      ),
       drawer: SideNav(),
       backgroundColor: Colors.white,
-      body: SafeArea(
+      body: Container(
+        padding: EdgeInsets.symmetric(vertical: 15),
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                CarouselSlider(
+                    items: [
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: primaryColor),
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/operasihitung.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: primaryColor),
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/operasihitung.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: primaryColor),
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/operasihitung.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: primaryColor),
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/operasihitung.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                    ],
+                    options: CarouselOptions(
+                      height: 180,
+                      enlargeCenterPage: true,
+                      autoPlay: true,
+                      aspectRatio: 16 / 9,
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enableInfiniteScroll: true,
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      viewportFraction: 0.8,
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      child: TextButton(
+                        child: Text(
+                          "MATERI",
+                          style: textStyle.copyWith(
+                              color: primaryColor,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        ),
+                        onPressed: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MateriPage()));
+                        }),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 250,
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MateriPage()));
+                        },
+                        icon: Icon(Icons.arrow_forward_rounded))
+                  ],
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Flexible(
+                          flex: 1,
+                          fit: FlexFit.tight,
+                          child: Stack(
+                            children: [
+                              Card(
+                                elevation: 8,
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                          "assets/images/operasihitung.png"),
+                                      ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        OperasiHitung())));
+                                          },
+                                          child: Text("Pelajari"))
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          )),
+                      Flexible(
+                          flex: 1,
+                          fit: FlexFit.tight,
+                          child: Stack(
+                            children: [
+                              Card(
+                                elevation: 8,
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Image.asset("assets/images/aljabar.png"),
+                                      ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        Aljabar())));
+                                          },
+                                          child: Text("Pelajari"))
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          )),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(left: 8),
+                      child: Text(
+                        "KUIS",
+                        style: textStyle.copyWith(
+                            color: primaryColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Flexible(
+                          flex: 1,
+                          fit: FlexFit.tight,
+                          child: Stack(
+                            children: [
+                              Card(
+                                elevation: 8,
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                          "assets/images/quiz.jpg"),
+                                      ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        Question())));
+                                          },
+                                          child: Text("Mainkan"))
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          )),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+
+      /*body: SafeArea(
         child: ListView(
           padding: EdgeInsets.fromLTRB(24, 10, 24, 20),
           children: [
@@ -99,7 +308,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
+      ),*/
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:aplikasi_kuis_matematika/shared/shared.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -19,3 +20,5 @@ part 'materipage.dart';
 part 'login.dart';
 part 'register.dart';
 part 'sidenavbar.dart';
+part 'question.dart';
+part 'point_sidebar.dart';

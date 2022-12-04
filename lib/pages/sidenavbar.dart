@@ -59,7 +59,7 @@ class _SideNavState extends State<SideNav> {
                           ),
                           Text(
                               style: textStyle.copyWith(color: Colors.white),
-                              "5000")
+                              "50")
                         ],
                       ),
                     ],

@@ -20,7 +20,7 @@ class MateriPage extends StatelessWidget {
             child: Card(
               elevation: 20,
               shadowColor: primaryColor,
-              color: Color(0xFF4FA095),
+              color: Color(0xFF00A2E9),
               child: SizedBox(
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -41,7 +41,7 @@ class MateriPage extends StatelessWidget {
                         'Dalam matematika, operasi hitung didefinisikan sebagai perlakuan terhadap sebuah bilangan, yakni berupa penjumlahan, pengurangan, perkalian, pembagian, dan sebagainya.',
                         style: textStyle.copyWith(
                           fontSize: 15,
-                          color: primaryColor,
+                          color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -64,7 +64,7 @@ class MateriPage extends StatelessWidget {
             child: Card(
               elevation: 20,
               shadowColor: primaryColor,
-              color: Color(0xFF4FA095),
+              color: Color(0xFF00A2E9),
               child: SizedBox(
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -85,7 +85,7 @@ class MateriPage extends StatelessWidget {
                         'Aljabar adalah salah satu cabang dari ilmu matematika yang identik dengan penyelesaian masalah dalam matematika dengan menggunakan atau mengandung huruf-huruf atau yang biasa kita sebut sebagai variabel.',
                         style: textStyle.copyWith(
                           fontSize: 15,
-                          color: primaryColor,
+                          color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -108,7 +108,7 @@ class MateriPage extends StatelessWidget {
             child: Card(
               elevation: 20,
               shadowColor: primaryColor,
-              color: Color(0xFF4FA095),
+              color: Color(0xFF00A2E9),
               child: SizedBox(
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -129,7 +129,7 @@ class MateriPage extends StatelessWidget {
                         'Bangun datar dapat didefinisikan sebagai bangun rata yang mempunyai dua dimensi yaitu panjang dan lebar, tetapi tidak mempunyai tinggi atau tebal.',
                         style: textStyle.copyWith(
                           fontSize: 15,
-                          color: primaryColor,
+                          color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -152,7 +152,7 @@ class MateriPage extends StatelessWidget {
             child: Card(
               elevation: 20,
               shadowColor: primaryColor,
-              color: Color(0xFF4FA095),
+              color: Color(0xFF00A2E9),
               child: SizedBox(
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -173,7 +173,7 @@ class MateriPage extends StatelessWidget {
                         'Pola mengandung makna bentuk atau susunan yang tetap dan Bilangan mengandung makna satuan jumlah yang merujuk pada angka. Jadi Pola Bilangan adalah bentuk atau susunan yang tetap pada suatu angka.',
                         style: textStyle.copyWith(
                           fontSize: 15,
-                          color: primaryColor,
+                          color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
