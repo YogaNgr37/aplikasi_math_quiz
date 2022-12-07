@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/images/operasihitung.png"),
+                                    "assets/images/aljabar.png"),
                                 fit: BoxFit.cover)),
                       ),
                       Container(
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/images/operasihitung.png"),
+                                    "assets/images/bangundatar.png"),
                                 fit: BoxFit.cover)),
                       ),
                       Container(
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
                                 image: AssetImage(
-                                    "assets/images/operasihitung.png"),
+                                    "assets/images/polabilangan.png"),
                                 fit: BoxFit.cover)),
                       ),
                     ],

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:aplikasi_kuis_matematika/shared/shared.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -22,3 +23,5 @@ part 'register.dart';
 part 'sidenavbar.dart';
 part 'question.dart';
 part 'point_sidebar.dart';
+part 'win.dart';
+part 'wrong.dart';

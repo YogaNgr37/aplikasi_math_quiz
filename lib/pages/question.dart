@@ -11,7 +11,7 @@ class _QuestionState extends State<Question> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/background.png"))),
+      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/background.png"), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(title: Text("5 POIN"),centerTitle: true,),

@@ -26,17 +26,6 @@ class _PointSideBarState extends State<PointSideBar> {
           })
         ],
       )
-      /*SafeArea(
-        child: Column(
-          children: [
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 10, 
-              itemBuilder: (context, index) {
-              return ListTile();
-            },)
-          ],
-        )),*/
     );
   }
 }
