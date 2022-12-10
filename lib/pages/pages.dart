@@ -25,3 +25,4 @@ part 'question.dart';
 part 'point_sidebar.dart';
 part 'win.dart';
 part 'wrong.dart';
+part 'profile.dart';
