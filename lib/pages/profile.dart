@@ -8,11 +8,29 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        leading: IconButton(onPressed:() {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+        },icon: Icon(Icons.arrow_back),),
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.share)),
           IconButton(onPressed: (){}, icon: Icon(Icons.person_add)),
@@ -60,11 +78,27 @@ class _ProfilePageState extends State<ProfilePage> {
                     height: 10,
                   ),
                   Text(
-                    "Yoga Nugroho",
+                    "${loggedInUser.firstName} ${loggedInUser.secondName}",
                     style: textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.w500),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                                  Icons.monetization_on_sharp,
+                                  color: Colors.white,
+                                ),
+                      Text(
+                        "${loggedInUser.poin}",
+                        style: textStyle.copyWith(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 20,
@@ -83,7 +117,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       Column(
                         children: [
                           Text(
-                            "45",
+                            "${loggedInUser.level}",
                             style: textStyle.copyWith(
                                 color: Colors.white.withOpacity(0.9),
                                 fontSize: 42,
@@ -101,7 +135,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       Column(
                         children: [
                           Text(
-                            "#10",
+                            "#${loggedInUser.rank}",
                             style: textStyle.copyWith(
                                 color: Colors.white.withOpacity(0.9),
                                 fontSize: 42,

@@ -10,10 +10,20 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
+  late List quiz;
+
+  getquiz() async {
+    await HomeFire.getquiz().then((returned_quiz) {
+      setState(() {
+        quiz = returned_quiz;
+      },);
+    });
+  }
 
   @override
   void initState() {
     super.initState();
+    getquiz();
     FirebaseFirestore.instance
         .collection("users")
         .doc(user!.uid)

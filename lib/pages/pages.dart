@@ -1,5 +1,8 @@
 import 'dart:math';
 
+import 'package:aplikasi_kuis_matematika/models/auth.dart';
+import 'package:aplikasi_kuis_matematika/models/home_fire.dart';
+import 'package:aplikasi_kuis_matematika/models/localdb.dart';
 import 'package:aplikasi_kuis_matematika/shared/shared.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:confetti/confetti.dart';

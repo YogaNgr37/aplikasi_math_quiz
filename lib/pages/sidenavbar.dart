@@ -32,54 +32,65 @@ class _SideNavState extends State<SideNav> {
         child: ListView(
           //padding: EdgeInsets.fromLTRB(10, 40, 10, 10),
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: Row(
+            GestureDetector(
+              onTap: (() {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage()));
+              }),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                          style: textStyle.copyWith(color: Colors.white),
-                          "${loggedInUser.firstName} ${loggedInUser.secondName}"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.monetization_on,
-                            color: Colors.white,
-                          ),
-                          Text(
-                              style: textStyle.copyWith(color: Colors.white),
-                              "50")
-                        ],
-                      ),
-                    ],
-                  )
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                                style: textStyle.copyWith(color: Colors.white),
+                                "${loggedInUser.firstName} ${loggedInUser.secondName}"),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.monetization_on_sharp,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                    style: textStyle.copyWith(color: Colors.white),
+                                    "${loggedInUser.poin}")
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 25),
+                child: Text(
+                    style: textStyle.copyWith(color: Colors.white, fontSize: 16),
+                    "Leaderboard - Peringkat ${loggedInUser.rank}"),
+                    ),
                 ],
               ),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 25),
-              child: Text(
-                  style: textStyle.copyWith(color: Colors.white, fontSize: 16),
-                  "Leaderboard - Peringkat 10"),
             ),
             SizedBox(
               height: 48,
             ),
-            listItem(label: "Daily Quiz", icon: Icons.quiz),
-            listItem(label: "Leaderboard", icon: Icons.leaderboard),
-            listItem(label: "How to Use", icon: Icons.question_answer),
-            listItem(label: "About Us", icon: Icons.face),
+            listItem(label: "Daily Quiz", icon: Icons.quiz, context: context, path: MaterialPageRoute(builder: (BuildContext context) => Question())),
+            listItem(label: "Leaderboard", icon: Icons.leaderboard, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
+            listItem(label: "How to Use", icon: Icons.question_answer, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
+            listItem(label: "About Us", icon: Icons.face, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
             SizedBox(
               height: 350,
             ),
@@ -102,7 +113,7 @@ class _SideNavState extends State<SideNav> {
     );
   }
 
-  Widget listItem({required String label, required IconData icon}) {
+  Widget listItem({required String label, required IconData icon, required BuildContext context, required path}) {
     final color = Colors.white;
     final hovercolor = Colors.white60;
 
@@ -113,7 +124,9 @@ class _SideNavState extends State<SideNav> {
         label,
         style: textStyle.copyWith(color: Colors.white, fontSize: 16),
       ),
-      onTap: (() {}),
+      onTap: (() {
+        Navigator.pushReplacement(context, path);
+      }),
     );
   }
 
