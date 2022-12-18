@@ -40,17 +40,18 @@ class _WinPageState extends State<WinPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("SELAMAT!", style: textStyle.copyWith(fontSize: 30, fontWeight: FontWeight.bold,),),
-                Text("JAWABAN ANDA BENAR",style: textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),),
+                Text("ANDA MENJAWAB SEMUA PERTANYAAN",style: textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),),
+                Text("DENGAN BENAR",style: textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),),
                 SizedBox(height: 15,),
                 Text("Anda Mendapatkan",style: textStyle.copyWith(fontSize: 13, fontWeight: FontWeight.w400),),
-                Text("5 POIN",style: textStyle.copyWith(fontSize: 28, fontWeight: FontWeight.w700),),
+                Text("50 POIN",style: textStyle.copyWith(fontSize: 28, fontWeight: FontWeight.w700),),
                 SizedBox(height: 25,),
                 Container(
                   padding: EdgeInsets.all(20),
                   child: Image.asset("assets/images/congrats.png")),
                 ElevatedButton(onPressed: () {
-                  
-                }, child: Text("Next", style: textStyle.copyWith(fontSize: 14),))
+                  Navigator.push(context,MaterialPageRoute(builder: ((context) => HomePage())));
+                }, child: Text("SELESAI", style: textStyle.copyWith(fontSize: 14),))
               ],
             )),
             buildConfettiWidget(confettiController, pi / 2),

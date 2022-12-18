@@ -231,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: ((context) =>
-                                                        LevelPage())));
+                                                        LevelPage(QuizAbout: 'quiz_about', quizID: 'Quizid',))));
                                           },
                                           child: Text("Mainkan"))
                                     ],

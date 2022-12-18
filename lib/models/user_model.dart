@@ -1,3 +1,7 @@
+import 'package:aplikasi_kuis_matematika/models/localdb.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 class UserModel {
   String? uid;
   String? email;
@@ -35,3 +39,20 @@ class UserModel {
     };
   }
 }
+
+
+
+  updatePoin(int amount) async{
+    if(amount != 2500){
+      final FirebaseAuth _myauth = FirebaseAuth.instance;
+
+      await FirebaseFirestore.instance.collection("users").doc(_myauth.currentUser!.uid).get().then((value) async{
+        await LocalDB.savePoin((value.data()!["poin"] + amount).toString());
+        await FirebaseFirestore.instance.collection("users").doc(_myauth.currentUser!.uid).update(
+            {"money" : value.data()!["money"] + amount})  ;
+      });
+    }
+
+    
+
+  }

@@ -87,7 +87,7 @@ class _SideNavState extends State<SideNav> {
             SizedBox(
               height: 48,
             ),
-            listItem(label: "Daily Quiz", icon: Icons.quiz, context: context, path: MaterialPageRoute(builder: (BuildContext context) => Question())),
+            listItem(label: "Daily Quiz", icon: Icons.quiz, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
             listItem(label: "Leaderboard", icon: Icons.leaderboard, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
             listItem(label: "How to Use", icon: Icons.question_answer, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
             listItem(label: "About Us", icon: Icons.face, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),

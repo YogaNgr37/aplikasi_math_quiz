@@ -1,14 +1,13 @@
-part of 'pages.dart';
+part of 'lose.dart';
 
-class WrongPage extends StatelessWidget {
-  const WrongPage({super.key});
+class Wrong5 extends StatelessWidget {
+  const Wrong5({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/wrong.png",), fit: BoxFit.cover)),
       child: Scaffold(
-        floatingActionButton: ElevatedButton(child: Text("Coba Lagi", style: textStyle.copyWith(fontSize: 14),), onPressed: (){},),
         backgroundColor: Colors.transparent,
         body: Center(
                 child: Column(
@@ -38,7 +37,7 @@ class WrongPage extends StatelessWidget {
                       fontSize: 13, fontWeight: FontWeight.w400),
                 ),
                 Text(
-                  "0 POIN",
+                  "25 POIN",
                   style: textStyle.copyWith(
                     color: Colors.white,
                       fontSize: 28, fontWeight: FontWeight.w700),
@@ -48,7 +47,9 @@ class WrongPage extends StatelessWidget {
                 ),
                 Icon(Icons.error_outline, size: 100,color: Colors.white,),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                    },
                     child: Text(
                       "Kembali",
                       style: textStyle.copyWith(fontSize: 14),

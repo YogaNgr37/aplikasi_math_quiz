@@ -1,9 +1,14 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:aplikasi_kuis_matematika/models/auth.dart';
 import 'package:aplikasi_kuis_matematika/models/home_fire.dart';
 import 'package:aplikasi_kuis_matematika/models/localdb.dart';
+import 'package:aplikasi_kuis_matematika/models/question_model.dart';
+import 'package:aplikasi_kuis_matematika/models/quiz1_model.dart';
+import 'package:aplikasi_kuis_matematika/question/quest.dart';
 import 'package:aplikasi_kuis_matematika/shared/shared.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,10 +30,8 @@ part 'materipage.dart';
 part 'login.dart';
 part 'register.dart';
 part 'sidenavbar.dart';
-part 'question.dart';
 part 'point_sidebar.dart';
 part 'win.dart';
-part 'wrong.dart';
 part 'profile.dart';
 part 'levelpage.dart';
 part 'quizintro.dart';

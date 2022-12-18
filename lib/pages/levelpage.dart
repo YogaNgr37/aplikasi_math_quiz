@@ -1,8 +1,18 @@
 part of 'pages.dart';
 
-class LevelPage extends StatelessWidget {
-  const LevelPage({super.key});
+class LevelPage extends StatefulWidget {
+  String QuizAbout;
+  String quizID;
+  LevelPage({
+    required this.QuizAbout,
+    required this.quizID,
+  });
 
+  @override
+  State<LevelPage> createState() => _LevelPageState();
+}
+
+class _LevelPageState extends State<LevelPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,11 +43,8 @@ class LevelPage extends StatelessWidget {
                       children: [
                         Image.asset("assets/images/santai.png"),
                         ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) => Question())));
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
                             },
                             child: Text("Main"))
                       ],
@@ -55,10 +62,7 @@ class LevelPage extends StatelessWidget {
                         Image.asset("assets/images/tegang.png"),
                         ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) => Question())));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
                             },
                             child: Text("Main"))
                       ],
@@ -76,10 +80,7 @@ class LevelPage extends StatelessWidget {
                         Image.asset("assets/images/pusing.png"),
                         ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) => Question())));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
                             },
                             child: Text("Main"))
                       ],
