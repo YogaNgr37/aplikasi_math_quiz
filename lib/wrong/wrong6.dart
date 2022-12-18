@@ -27,17 +27,23 @@ class Wrong6 extends StatelessWidget {
                     color: Colors.white,
                       fontSize: 17, fontWeight: FontWeight.w500),
                 ),
+                Text(
+                  "JAWABAN YANG BENAR ADALAH A. 22",
+                  style: textStyle.copyWith(
+                    color: Colors.white,
+                      fontSize: 17, fontWeight: FontWeight.w500),
+                ),
                 SizedBox(
                   height: 15,
                 ),
                 Text(
-                  "Anda Mendapatkan",
+                  "SKOR ANDA",
                   style: textStyle.copyWith(
                     color: Colors.white,
                       fontSize: 13, fontWeight: FontWeight.w400),
                 ),
                 Text(
-                  "30 POIN",
+                  "60",
                   style: textStyle.copyWith(
                     color: Colors.white,
                       fontSize: 28, fontWeight: FontWeight.w700),

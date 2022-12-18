@@ -24,14 +24,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/user_model.dart';
 
 
-part 'welcomepage.dart';
 part 'homepage.dart';
 part 'materipage.dart';
 part 'login.dart';
 part 'register.dart';
 part 'sidenavbar.dart';
-part 'point_sidebar.dart';
 part 'win.dart';
-part 'profile.dart';
 part 'levelpage.dart';
-part 'quizintro.dart';

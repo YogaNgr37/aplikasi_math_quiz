@@ -7,11 +7,9 @@ class UserModel {
   String? email;
   String? firstName;
   String? secondName;
-  String? poin;
-  String? rank;
-  String? level;
 
-  UserModel({this.uid, this.email, this.firstName, this.secondName, this.poin, this.rank, this.level});
+
+  UserModel({this.uid, this.email, this.firstName, this.secondName,});
 
   // receiving data from server
   factory UserModel.fromMap(map) {
@@ -20,9 +18,6 @@ class UserModel {
       email: map['email'],
       firstName: map['firstName'],
       secondName: map['secondName'],
-      poin: map['poin'],
-      rank: map['rank'],
-      level: map['level']
     );
   }
 
@@ -33,26 +28,9 @@ class UserModel {
       'email': email,
       'firstName': firstName,
       'secondName': secondName,
-      'poin' : "0",
-      'rank' : "NA",
-      'level' : "1",
     };
   }
+
 }
 
 
-
-  updatePoin(int amount) async{
-    if(amount != 2500){
-      final FirebaseAuth _myauth = FirebaseAuth.instance;
-
-      await FirebaseFirestore.instance.collection("users").doc(_myauth.currentUser!.uid).get().then((value) async{
-        await LocalDB.savePoin((value.data()!["poin"] + amount).toString());
-        await FirebaseFirestore.instance.collection("users").doc(_myauth.currentUser!.uid).update(
-            {"money" : value.data()!["money"] + amount})  ;
-      });
-    }
-
-    
-
-  }

@@ -27,17 +27,23 @@ class WrongPage extends StatelessWidget {
                     color: Colors.white,
                       fontSize: 17, fontWeight: FontWeight.w500),
                 ),
+                Text(
+                  "JAWABAN YANG BENAR ADALAH C. 10a -4b + 11",
+                  style: textStyle.copyWith(
+                    color: Colors.white,
+                      fontSize: 17, fontWeight: FontWeight.w500),
+                ),
                 SizedBox(
                   height: 15,
                 ),
                 Text(
-                  "Anda Mendapatkan",
+                  "SKOR ANDA",
                   style: textStyle.copyWith(
                     color: Colors.white,
                       fontSize: 13, fontWeight: FontWeight.w400),
                 ),
                 Text(
-                  "0 POIN",
+                  "0",
                   style: textStyle.copyWith(
                     color: Colors.white,
                       fontSize: 28, fontWeight: FontWeight.w700),

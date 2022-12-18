@@ -43,8 +43,8 @@ class _WinPageState extends State<WinPage> {
                 Text("ANDA MENJAWAB SEMUA PERTANYAAN",style: textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),),
                 Text("DENGAN BENAR",style: textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),),
                 SizedBox(height: 15,),
-                Text("Anda Mendapatkan",style: textStyle.copyWith(fontSize: 13, fontWeight: FontWeight.w400),),
-                Text("50 POIN",style: textStyle.copyWith(fontSize: 28, fontWeight: FontWeight.w700),),
+                Text("SKOR ANDA",style: textStyle.copyWith(fontSize: 13, fontWeight: FontWeight.w400),),
+                Text("100",style: textStyle.copyWith(fontSize: 28, fontWeight: FontWeight.w700),),
                 SizedBox(height: 25,),
                 Container(
                   padding: EdgeInsets.all(20),

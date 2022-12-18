@@ -2,10 +2,6 @@ part of 'quest.dart';
 
 class Question extends StatefulWidget {
 
-  //String quizID;
-  //int quePoin;
-
-  //Question(String quizId, int i, {required this.quizID,required this.quePoin});
 
   @override
   State<Question> createState() => _QuestionState();
@@ -13,46 +9,32 @@ class Question extends StatefulWidget {
 
 class _QuestionState extends State<Question> {
 
-  /*QuestionModel questionModel = new QuestionModel();
+  int maxSeconds = 120;
+  int seconds = 120;
+  Timer? timer;
 
-  genQue() async {
-    await QuizQueCreator.genQuiz(widget.quizID, widget.quePoin).then((queData){
-
-      setState(() {
-        questionModel.question = queData["question"];
-      questionModel.correctAnswer= queData["correctAnswer"];
-
-      List options = [
-        queData["opt1"],
-        queData["opt2"],
-        queData["opt3"],
-        queData["opt4"],
-      ];
-      options.shuffle();
-
-      questionModel.option1 = options[0];
-      questionModel.option2 = options[1];
-      questionModel.option3 = options[2];
-      questionModel.option4 = options[3];
-      });
-      
+  QueTimer(){
+    timer = Timer.periodic(Duration(seconds: 1), (_) { 
+      setState(() => seconds--);
+      if (seconds==0){
+        timer?.cancel();
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>WrongPage()));
+      }
     });
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    timer?.cancel();
+  }
 
-  bool optALocked = false;
-  bool optBLocked = false;
-  bool optCLocked = false;
-  bool optDLocked = false;
-//CHANGE THE TIMER SECONDS ACCORDING TO MONEY WON
-  int maxSeconds =  30;
-  int seconds = 30;
-  Timer? timer;
-
-  initState(){
+  @override
+  void initState(){
     super.initState();
-    genQue();
-  }*/
+    QueTimer();
+  }
+
   
   @override
   Widget build(BuildContext context) {
@@ -60,8 +42,7 @@ class _QuestionState extends State<Question> {
       decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/background.png"), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(title: Text("TAHAP 1 - 5 POIN"),centerTitle: true,),
-        drawer: PointSideBar(),
+        appBar: AppBar(title: Text("TAHAP 1 - SKOR 10"),centerTitle: true, automaticallyImplyLeading: false,),
         floatingActionButton: ElevatedButton(onPressed: (){
           Navigator.push(context,MaterialPageRoute(builder: ((context) => HomePage())));
         }, child: Text(style: textStyle.copyWith(fontSize: 18),"Keluar")),
@@ -75,8 +56,8 @@ class _QuestionState extends State<Question> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  CircularProgressIndicator(strokeWidth: 7,backgroundColor: Colors.green, color: Colors.white,),
-                  Center(child: Text(style: textStyle.copyWith(color: Colors.white,fontSize: 35, fontWeight: FontWeight.bold),"120"))
+                  CircularProgressIndicator(strokeWidth: 7,backgroundColor: Colors.green, color: Colors.white, value: seconds/maxSeconds,),
+                  Center(child: Text(style: textStyle.copyWith(color: Colors.white,fontSize: 35, fontWeight: FontWeight.bold),seconds.toString()))
                 ],
               )),
               SizedBox(height: 20,),

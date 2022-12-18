@@ -33,9 +33,7 @@ class _SideNavState extends State<SideNav> {
           //padding: EdgeInsets.fromLTRB(10, 40, 10, 10),
           children: [
             GestureDetector(
-              onTap: (() {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage()));
-              }),
+              onTap: (() {}),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -53,46 +51,40 @@ class _SideNavState extends State<SideNav> {
                         Column(
                           children: [
                             Text(
-                                style: textStyle.copyWith(color: Colors.white),
+                                style: textStyle.copyWith(fontSize: 20, color: Colors.white),
                                 "${loggedInUser.firstName} ${loggedInUser.secondName}"),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.monetization_on_sharp,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                    style: textStyle.copyWith(color: Colors.white),
-                                    "${loggedInUser.poin}")
-                              ],
-                            ),
                           ],
                         )
                       ],
                     ),
-                  
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 25),
-                child: Text(
-                    style: textStyle.copyWith(color: Colors.white, fontSize: 16),
-                    "Leaderboard - Peringkat ${loggedInUser.rank}"),
-                    ),
+                  ),
                 ],
               ),
             ),
+            Divider(thickness: 2, color: Colors.white, indent: 10, endIndent: 10,),
             SizedBox(
-              height: 48,
+              height: 20,
             ),
-            listItem(label: "Daily Quiz", icon: Icons.quiz, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
-            listItem(label: "Leaderboard", icon: Icons.leaderboard, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
-            listItem(label: "How to Use", icon: Icons.question_answer, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
-            listItem(label: "About Us", icon: Icons.face, context: context, path: MaterialPageRoute(builder: (BuildContext context) => HomePage())),
+            listItem(
+                label: "Daily Quiz",
+                icon: Icons.quiz,
+                context: context,
+                path: MaterialPageRoute(
+                    builder: (BuildContext context) => HomePage())),
+            listItem(
+                label: "How to Use",
+                icon: Icons.question_answer,
+                context: context,
+                path: MaterialPageRoute(
+                    builder: (BuildContext context) => HomePage())),
+            listItem(
+                label: "About Us",
+                icon: Icons.face,
+                context: context,
+                path: MaterialPageRoute(
+                    builder: (BuildContext context) => HomePage())),
             SizedBox(
-              height: 350,
+              height: 430,
             ),
             Container(
                 margin: EdgeInsets.all(10),
@@ -113,7 +105,11 @@ class _SideNavState extends State<SideNav> {
     );
   }
 
-  Widget listItem({required String label, required IconData icon, required BuildContext context, required path}) {
+  Widget listItem(
+      {required String label,
+      required IconData icon,
+      required BuildContext context,
+      required path}) {
     final color = Colors.white;
     final hovercolor = Colors.white60;
 
@@ -132,6 +128,7 @@ class _SideNavState extends State<SideNav> {
 
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => LoginScreen()));
   }
 }

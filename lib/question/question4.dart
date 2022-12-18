@@ -8,14 +8,39 @@ class Question4 extends StatefulWidget {
 
 class _Question4State extends State<Question4> {
 
+  int maxSeconds = 120;
+  int seconds = 120;
+  Timer? timer;
+
+  QueTimer(){
+    timer = Timer.periodic(Duration(seconds: 1), (_) { 
+      setState(() => seconds--);
+      if (seconds==0){
+        timer?.cancel();
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Wrong3()));
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    timer?.cancel();
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    QueTimer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/background.png"), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(title: Text("TAHAP 4 - 20 POIN"),centerTitle: true,),
-        drawer: PointSideBar(),
+        appBar: AppBar(title: Text("TAHAP 4 - SKOR 40"),centerTitle: true, automaticallyImplyLeading: false,),
         floatingActionButton: ElevatedButton(onPressed: (){
           Navigator.push(context,MaterialPageRoute(builder: ((context) => HomePage())));
         }, child: Text(style: textStyle.copyWith(fontSize: 18),"Keluar")),
@@ -29,8 +54,8 @@ class _Question4State extends State<Question4> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  CircularProgressIndicator(strokeWidth: 7,backgroundColor: Colors.green, color: Colors.white,),
-                  Center(child: Text(style: textStyle.copyWith(color: Colors.white,fontSize: 35, fontWeight: FontWeight.bold),"120"))
+                  CircularProgressIndicator(strokeWidth: 7,backgroundColor: Colors.green, color: Colors.white, value: seconds/maxSeconds,),
+                  Center(child: Text(style: textStyle.copyWith(color: Colors.white,fontSize: 35, fontWeight: FontWeight.bold),seconds.toString()))
                 ],
               )),
               SizedBox(height: 20,),

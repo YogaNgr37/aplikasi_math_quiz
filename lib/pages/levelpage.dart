@@ -44,7 +44,7 @@ class _LevelPageState extends State<LevelPage> {
                         Image.asset("assets/images/santai.png"),
                         ElevatedButton(
                             onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Question()));
                             },
                             child: Text("Main"))
                       ],
@@ -62,7 +62,7 @@ class _LevelPageState extends State<LevelPage> {
                         Image.asset("assets/images/tegang.png"),
                         ElevatedButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Question()));
                             },
                             child: Text("Main"))
                       ],
@@ -80,7 +80,7 @@ class _LevelPageState extends State<LevelPage> {
                         Image.asset("assets/images/pusing.png"),
                         ElevatedButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Question()));
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Question()));
                             },
                             child: Text("Main"))
                       ],

@@ -67,20 +67,4 @@ class LocalDB {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     return await preferences.getString(rkey);
   }
-
-  static saveExp(bool bool) {}
-
-  static getAud() {}
-
-  static getJoker() {}
-
-  static get50() {}
-
-  static getExp() {}
-
-  static saveAud(bool bool) {}
-
-  static saveJoker(bool bool) {}
-
-  static save50(bool bool) {}
 }
