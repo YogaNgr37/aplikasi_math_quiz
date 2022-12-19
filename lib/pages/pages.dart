@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:aplikasi_kuis_matematika/models/auth.dart';
 import 'package:aplikasi_kuis_matematika/models/home_fire.dart';
 import 'package:aplikasi_kuis_matematika/models/localdb.dart';
 import 'package:aplikasi_kuis_matematika/models/question_model.dart';
